@@ -1,0 +1,25 @@
+# --- UI ---
+streamlit>=1.38
+streamlit-mic-recorder>=0.0.5
+
+# --- ASR: local, free, offline speech-to-text ---
+# faster-whisper pulls in `av` (audio decoding) as a dependency automatically.
+# If you ever see "metadata_errors" TypeErrors, it means a STALE `av` install
+# (often from a conda base environment) is shadowing this one - see the
+# README's "environment check" section.
+faster-whisper>=1.0
+pydub>=0.25
+# NOTE: pydub also requires the `ffmpeg` command-line tool to be installed
+# on your system (not a pip package). macOS: brew install ffmpeg
+
+# --- TTS: free, natural-sounding voices ---
+edge-tts>=6.1
+
+# --- LLM pipeline (LangChain + Groq's free, fast inference) ---
+langchain-core>=0.3
+langchain-groq>=0.2
+groq>=0.9
+pydantic>=2.7
+
+# --- Config ---
+python-dotenv>=1.0
